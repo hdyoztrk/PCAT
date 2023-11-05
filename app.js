@@ -9,7 +9,7 @@ const pageController = require('./controller/pageController')
 const app = express();
 
 //connect db
-mongoose.connect('mongodb://127.0.0.1:27017/pcat-db', {
+mongoose.connect('DB Connection Uri', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
