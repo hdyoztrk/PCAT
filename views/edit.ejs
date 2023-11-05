@@ -24,42 +24,32 @@
                         <div class="row mt-3 mb-5 pb-3">
                             <div class="col-12">
                                 <div class="mx-auto tm-about-text-container px-3">
-                                    <h2 class="tm-page-title tm-text-primary">Add the Photo</h2>
+                                    <h2 class="tm-page-title tm-text-primary">Edit the Photo</h2>
                                     <p>
                                         Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam
                                         tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus
                                         lectus tincidunt id. You are <u>not allowed</u> to re-distribute the template
                                         ZIP file on any template collection website.
                                     </p>
-                                    <p>Video Catalog is a free website template for your business. This is
-                                        100% free Bootstrap v4.4.1 layout. You can modify and adapt this template for
-                                        your CMS websites. You can use it for commercial or non-commercial work. If you
-                                        wish to suport <a rel="nofollow" target="_parent" href="https://templatemo.com"
-                                            class="tm-text-primary">TemplateMo</a>, please contact us.</p>
+
                                 </div>
                             </div>
                         </div>
                         <div class="mx-auto pb-3 tm-about-text-container px-3">
                             <div class="row">
                                 <div class="col-lg-12 mb-5">
-                                    <form method="POST" action="/photos" class="tm-contact-form"
-                                        encType="multipart/form-data">
+                                    <form method="POST" action="/photos/<%= photo._id %>?_method=PUT"
+                                        class="tm-contact-form" encType="multipart/form-data">
                                         <div class="form-group">
-                                            <input type="text" name="title" class="form-control rounded-0"
-                                                placeholder="Foto Title" required />
+                                            <input type="text" name="title" value="<%= photo.title %>"
+                                                class="form-control rounded-0" placeholder="Foto Title" required />
                                         </div>
-
                                         <div class="form-group">
                                             <textarea rows="8" name="description" class="form-control rounded-0"
-                                                placeholder="Photo Description" required></textarea>
+                                                required><%= photo.description %></textarea>
                                         </div>
-
-                                        <div class="form-group">
-                                            <input type="file" name="image" class="form-control-file rounded-0" />
-                                        </div>
-
                                         <div class="form-group mb-0">
-                                            <button type="submit"
+                                            <button type="update"
                                                 class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Submit</span></button>
                                         </div>
                                     </form>
